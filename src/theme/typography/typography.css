@@ -1,0 +1,9 @@
+body {
+  font-family: var(--font-family-default);
+}
+
+h1 {
+  font-weight: 800;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-default);
+}

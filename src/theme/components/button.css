@@ -1,0 +1,7 @@
+button,
+.button {
+  cursor: pointer;
+  background: var(--color-primary, #333);
+  color: var(--color-primary-contrast, #fff);
+  padding: var(--space-s) var(--space-default);
+}

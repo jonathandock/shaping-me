@@ -1,0 +1,43 @@
+.padding {
+  padding: var(--space-default);
+}
+
+.padding-x {
+  padding-right: var(--space-default);
+  padding-left: var(--space-default);
+}
+
+.padding-y {
+  padding-top: var(--space-default);
+  padding-bottom: var(--space-default);
+}
+
+.padding-top {
+  padding-bottom: var(--space-default);
+}
+
+.padding-bottom {
+  padding-bottom: var(--space-default);
+}
+
+.margin {
+  margin: var(--space-default);
+}
+
+.margin-x {
+  margin-right: var(--space-default);
+  margin-left: var(--space-default);
+}
+
+.margin-y {
+  margin-top: var(--space-default);
+  margin-bottom: var(--space-default);
+}
+
+.margin-top {
+  margin-bottom: var(--space-default);
+}
+
+.margin-bottom {
+  margin-bottom: var(--space-default);
+}

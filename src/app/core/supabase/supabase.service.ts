@@ -13,6 +13,16 @@ export class SupabaseService {
     console.log('init supabase');
   }
 
+  public async signin(email: string, password: string): Promise<void> {
+    try {
+      const { data, error } = await this.supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      this.user.set(data.user);
+    } catch (error) {}
+  }
+
   public async signup(email: string, password: string): Promise<void> {
     try {
       const { data, error } = await this.supabase.auth.signUp({

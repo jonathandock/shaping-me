@@ -1,6 +1,6 @@
 import { Component, computed, input, output, signal } from '@angular/core';
 import { LoginData, LoginTypeEnum } from '../../models/login.models';
-import { email, form, FormField, required } from '@angular/forms/signals';
+import { email, form, FormField, min, minLength, required } from '@angular/forms/signals';
 
 @Component({
   imports: [FormField],
@@ -10,7 +10,7 @@ import { email, form, FormField, required } from '@angular/forms/signals';
 })
 export class LoginFormComponent {
   public readonly loginType = input<'signin' | 'signup'>();
-  public readonly signup = output<LoginData>();
+  public readonly submit = output<LoginData>();
 
   public submitLabel = computed<string>(() =>
     this.loginType() === LoginTypeEnum.SIGNIN ? 'Sign in' : 'Sign up',
@@ -27,6 +27,7 @@ export class LoginFormComponent {
     required(schemaPath.password, { message: 'Password is required' });
     // formatting errors
     email(schemaPath.email, { message: 'Enter a valid email address' });
+    minLength(schemaPath.password, 6, { message: 'Password must be 6 characters minimum' });
   });
 
   onSubmit(event: Event) {
@@ -34,7 +35,6 @@ export class LoginFormComponent {
 
     // Perform login logic here
     const credentials = this.loginModel();
-    console.log('Logging in with:', credentials);
-    this.signup.emit(credentials);
+    this.submit.emit(credentials);
   }
 }

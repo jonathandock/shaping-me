@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './containers/home/pages/home/home.page';
-import { LoginPage } from './containers/login/pages/login/login.page';
+import { SigninPage } from './containers/login/pages/signin/signin.page';
 import { loggedInGuard } from './core/guards/logged-in-guard';
 import { SignupPage } from './containers/login/pages/signup/signup.page';
 
@@ -11,8 +11,8 @@ export const routes: Routes = [
     canActivate: [loggedInGuard],
   },
   {
-    path: 'login',
-    component: LoginPage,
+    path: 'signin',
+    component: SigninPage,
   },
   {
     path: 'signup',

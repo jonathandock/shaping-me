@@ -6,5 +6,5 @@ export const loggedInGuard: CanActivateFn = async (_route, _state) => {
   const router = inject(Router);
   const supabaseService = inject(SupabaseService);
   const isLoggedIn = await supabaseService.isLoggedIn();
-  return isLoggedIn ? true : router.createUrlTree(['/login']);
+  return isLoggedIn ? true : router.createUrlTree(['/signin']);
 };
