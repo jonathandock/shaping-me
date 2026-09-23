@@ -1,0 +1,13 @@
+<form (submit)="onSubmit($event)">
+  <div>
+    <label for="email">Email</label><br />
+    <input id="email" type="email" [formField]="loginForm.email" placeholder="email" />
+  </div>
+  <div>
+    <label for="password">Password</label><br />
+    <input id="password" type="password" [formField]="loginForm.password" placeholder="password" />
+  </div>
+  <div>
+    <button type="submit">{{ submitLabel() }}</button>
+  </div>
+</form>
